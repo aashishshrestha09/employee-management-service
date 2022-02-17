@@ -43,12 +43,6 @@ public class EmployeeRepositoryTest {
 
     }
 
-    @AfterEach
-    @BeforeEach
-    public void clear() {
-        employeeRepository.deleteAll();
-    }
-
 
     @Test
     public void whenFindAll_thenReturnAllEmployees() {

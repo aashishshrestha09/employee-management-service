@@ -7,18 +7,18 @@ pipeline {
     stages {
         stage("Build") {
             steps {
-                sh 'cd employee-system-api'
-                sh 'mvn clean install -DskipTests'
+                sh 'mvn employee-system-api/pom.file clean install -DskipTests'
             }
         }
         stage("Test") {
             steps {
-                sh 'cd employee-system-api'
-                sh 'mvn test'
+                sh 'mvn employee-system-api/pom.file test'
             }
         }
         stage("Docker Build") {
-            sh 'docker-compose up'
+            steps {
+                sh 'docker-compose up'
+            }
         }
     }
 }

@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  frontend:
+    build: ./employee-system-ui
+    restart: always
+    ports:
+      - 3000:3000
+    depends_on:
+      - backend

@@ -19,13 +19,13 @@ pipeline {
         }
         stage("Docker Build") {
             steps {
-                sh 'docker-compose up -d'
+                sh 'docker-compose -f docker-compose.database.yaml -f docker-compose.backend.yml -f docker-compose.frontend.yml up -d'
             }
         }
     }
     post {
         always {
-            sh "docker-compose down -v"
+            sh "docker-compose -f docker-compose.database.yaml -f docker-compose.backend.yml -f docker-compose.frontend.yml down -v"
         }
     }
 }

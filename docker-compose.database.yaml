@@ -4,6 +4,8 @@ services:
   mysql-db:
     image: mysql:8.0.28
     restart: always
+    ports:
+      - 3306:3306
     cap_add:
       - SYS_NICE
     environment:

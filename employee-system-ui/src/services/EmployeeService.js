@@ -1,6 +1,10 @@
 import axios from "axios";
 
-const EMPLOYEEE_BASE_URL = "http://localhost:8080/api/employee";
+const EMPLOYEEE_BASE_URL =
+  window.location.protocol +
+  "//" +
+  window.location.hostname +
+  ":8080/api/employee";
 
 class EmployeeService {
   getAllEmployees() {
